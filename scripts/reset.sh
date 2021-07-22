@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -eo pipefail
+set -euxo pipefail
 
 git checkout main && git checkout . && git clean -df
 
