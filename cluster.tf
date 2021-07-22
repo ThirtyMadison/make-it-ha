@@ -11,7 +11,7 @@ module "eks_node_group" {
 
 module "eks_cluster" {
   source = "cloudposse/eks-cluster/aws"
-  name       = local.name
+  name       = "${local.name}${local.identifier}"
   region     = "us-east-2"
   vpc_id     = data.terraform_remote_state.base.outputs.vpc_id
   subnet_ids = data.terraform_remote_state.base.outputs.subnet_ids
