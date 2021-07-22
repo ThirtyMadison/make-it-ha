@@ -1,10 +1,11 @@
-git checkout main
-git checkout .
-git clean -df
+#!/bin/bash
 
-terraform apply --auto-approve
+set -eo pipefail
 
-kubectl delete everything inside default ns
+git checkout main && git checkout . && git clean -df
+
+terraform destroy -auto-approve
+terraform apply -auto-approve
 
 kubectl apply -f deployment.yaml
 
