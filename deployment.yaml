@@ -10,6 +10,9 @@ spec:
       image: jwilder/whoami
       ports:
       - containerPort: 8000
+      resources:
+        limits:
+          cpu: "0.01"
 
 ---
 
