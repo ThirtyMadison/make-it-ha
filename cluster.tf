@@ -19,3 +19,7 @@ module "eks_cluster" {
   kubernetes_version    = local.kubernetes_version
   workers_role_arns     = [module.eks_node_group.eks_node_group_role_arn]
 }
+
+output "cluster_name" {
+  value = module.eks_cluster.eks_cluster_id
+}
